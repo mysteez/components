@@ -12,6 +12,7 @@ jobs:
       matrix:
         node-version: [10.x]
     steps:
+      - uses: chrislennon/action-aws-cli@v1.1
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Use Node.js ${{ matrix.node-version }}
@@ -27,11 +28,25 @@ jobs:
       - name: Build
         run: |
           npm run-script build
-      - name: Deploy Storybook
-        run: |
-          npm run deploy-storybook --bucket-path=${{ secrets.BUCKET_NAME }} --s3-sync-options=--acl=public-read
-      - name: Deploy npm package
-        uses: pascalgn/npm-publish-action@06e0830ea83eea10ed4a62654eeaedafb8bf50fc
+      - name: "Bump Version"
+        uses: "phips28/gh-action-bump-version@master"
+        with:
+          tag-prefix: ''
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy Storybook
+        run: |
+          npm run deploy-storybook -- --bucket-path=storybook.yetee.shop --s3-sync-options="--acl=public-read --region=ap-east-1" --aws-profile=NONE
+        env:
+          AWS_S3_BUCKET: ${{ secrets.BUCKET_NAME }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+      - name: Configure NPM
+        run: |
+          npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
+      - name: NPM Publish
+        run: |
+          npm publish
+        env:
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,10 +1,10 @@
 {
   "name": "components",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Component Library for Yetee",
   "author": "trankly",
   "license": "MIT",
-  "repository": "mysteez/components",
+  "repository": "git://github.com/mysteez/components.git",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
@@ -77,6 +77,6 @@
     "styled-components": "^5.2.0"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/@mysteez"
   }
 }
