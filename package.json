@@ -2,7 +2,7 @@
   "name": "components",
   "version": "1.0.4",
   "description": "Component Library for Yetee",
-  "author": "trankly",
+  "author": "Frank Thomas",
   "license": "MIT",
   "repository": "git://github.com/mysteez/components.git",
   "main": "dist/index.js",
