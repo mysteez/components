@@ -12,7 +12,7 @@ export interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button: React.FC<IProps> = ({
   color = 'primary',
   label,
-  fullWidth,
+  fullWidth = false,
   period = true,
   size = 'md'
 }: IProps) => {

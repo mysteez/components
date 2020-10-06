@@ -6,9 +6,9 @@ export const Primary = styled.button<{
   fullWidth: boolean
   size: 'sm' | 'md' | 'lg'
 }>`
+  outline: none;
   cursor: pointer;
   border: none;
-  height: 50px;
   width: ${(props) =>
     props.fullWidth
       ? '100%'

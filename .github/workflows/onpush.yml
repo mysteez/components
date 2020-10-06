@@ -1,0 +1,37 @@
+name: Push
+on:
+  push:
+    branches:
+      - master
+    tags-ignore:
+      - '*.*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x]
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@master
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install
+        run: |
+          npm i
+      - name: Unit Tests
+        run: |
+          npm test
+      - name: Build
+        run: |
+          npm run-script build
+      - name: Deploy Storybook
+        run: |
+          npm run deploy-storybook --bucket-path=${{ secrets.BUCKET_NAME }} --s3-sync-options=--acl=public-read
+      - name: Deploy npm package
+        uses: pascalgn/npm-publish-action@06e0830ea83eea10ed4a62654eeaedafb8bf50fc
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
