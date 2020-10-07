@@ -20,6 +20,14 @@ export const theme = {
         background: yeteeTurquoise
       }
     }
+  },
+  icon: {
+    primary: {
+      color: '#323232'
+    },
+    secondary: {
+      color: slateGray
+    }
   }
 }
 
