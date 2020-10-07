@@ -15,3 +15,8 @@ export const Hamburger = Template.bind({})
 Hamburger.args = {
   name: 'hamburger'
 }
+
+export const X = Template.bind({})
+X.args = {
+  name: 'x'
+}

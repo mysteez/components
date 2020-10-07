@@ -23,10 +23,10 @@ export const theme = {
   },
   icon: {
     primary: {
-      color: '#323232'
+      color: slateGray
     },
     secondary: {
-      color: slateGray
+      color: '#323232'
     }
   }
 }
