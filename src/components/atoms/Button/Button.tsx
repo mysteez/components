@@ -2,11 +2,11 @@ import * as S from './styles'
 import React from 'react'
 
 export interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  color: 'primary' | 'secondary'
   label: string
-  fullWidth: boolean
-  period: boolean
-  size: 'sm' | 'md' | 'lg'
+  color?: 'primary' | 'secondary'
+  fullWidth?: boolean
+  period?: boolean
+  size?: 'sm' | 'md' | 'lg'
 }
 
 export const Button: React.FC<IProps> = ({
@@ -14,12 +14,13 @@ export const Button: React.FC<IProps> = ({
   label,
   fullWidth = false,
   period = true,
-  size = 'md'
+  size = 'md',
+  ...props
 }: IProps) => {
   const StyledButton = color === 'primary' ? S.Primary : S.Secondary
 
   return (
-    <StyledButton color={color} fullWidth={fullWidth} size={size}>
+    <StyledButton color={color} fullWidth={fullWidth} size={size} {...props}>
       <S.Text>
         {label}
         {period ? '.' : ''}

@@ -19,6 +19,9 @@ export const theme = {
       secondary: {
         background: yeteeTurquoise
       }
+    },
+    typography: {
+      fontSize: '16px'
     }
   },
   icon: {

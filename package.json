@@ -73,6 +73,11 @@
     "dist"
   ],
   "dependencies": {
+    "@types/enzyme": "^3.10.7",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "jest-styled-components": "^7.0.3",
     "node-sass": "^4.14.1",
     "styled-components": "^5.2.0"
   },
