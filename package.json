@@ -1,5 +1,5 @@
 {
-  "name": "components",
+  "name": "@mysteez/components",
   "version": "1.0.10",
   "description": "Component Library for Yetee",
   "author": "Frank Thomas",
@@ -82,6 +82,6 @@
     "styled-components": "^5.2.0"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@mysteez"
+    "registry": "https://npm.pkg.github.com"
   }
 }
