@@ -11,34 +11,38 @@ import {
   h4FontSize
 } from './constants'
 
-export const bodyStyles = css`
+export const openSansFont = css`
   ${openSansCSS}
 `
 
 export const GlobalStyle = createGlobalStyle`
+   ${openSansFont}
  body {
-   ${bodyStyles}
-   font-family: ${baseFontFamily}
-   font-size: ${baseFontSize}
-   font-weight: normal
-   line-height: ${baseLineHeight}
+   font-family: '${baseFontFamily}';
+   font-size: ${baseFontSize};
+   font-weight: normal;
+   line-height: ${baseLineHeight};
 
    h1 {
-    font-size: ${h1FontSize}
-    line-height: ${h1LineHeight}
+    font-size: ${h1FontSize};
+    line-height: ${h1LineHeight};
    }
 
    h2 {
-    font-size: ${h2FontSize}
+    font-size: ${h2FontSize};
    }
 
    h3 {
-     font-size: ${h3FontSize}
+     font-size: ${h3FontSize};
    }
 
    h4 {
-    font-size: ${h4FontSize}
+    font-size: ${h4FontSize};
    }
 
+   button {
+    font-family: inherit;
+    font: inherit;
+   }
  }
 `

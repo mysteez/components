@@ -1,38 +1,11 @@
 // colors
 export const slateGray = '#6B6C6F'
+export const secondaryGray = '#323232'
 export const emeraldForestGreen = '#003A44'
 export const yeteeTurquoise = '#008293'
 export const iceGray = '#DFE3E4'
 export const lifeOrange = '#EF4036'
 export const white = '#FFFFFF'
-
-// theme colors
-export const theme = {
-  button: {
-    animation: {
-      transition: '0.3s'
-    },
-    colors: {
-      primary: {
-        background: lifeOrange
-      },
-      secondary: {
-        background: yeteeTurquoise
-      }
-    },
-    typography: {
-      fontSize: '16px'
-    }
-  },
-  icon: {
-    primary: {
-      color: slateGray
-    },
-    secondary: {
-      color: '#323232'
-    }
-  }
-}
 
 // typography
 export const baseFontFamily = 'Open Sans'
@@ -62,3 +35,30 @@ export const xLargeScreen = 1280
 export const largeScreen = 992
 export const mediumScreen = 720
 export const smallScreen = 540
+
+export const theme = {
+  button: {
+    animation: {
+      transition: '0.3s'
+    },
+    colors: {
+      primary: {
+        background: lifeOrange
+      },
+      secondary: {
+        background: yeteeTurquoise
+      }
+    },
+    typography: {
+      fontSize: baseFontSize
+    }
+  },
+  icon: {
+    primary: {
+      color: slateGray
+    },
+    secondary: {
+      color: secondaryGray
+    }
+  }
+}
