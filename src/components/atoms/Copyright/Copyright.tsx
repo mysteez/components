@@ -3,7 +3,7 @@ import React from 'react'
 import { baseFontSize, slateGray } from '../../../globalStyles/constants'
 
 export interface IProps {
-  company: string
+  company?: string
   color?: string
   size?: string
 }
