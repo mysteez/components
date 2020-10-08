@@ -15,7 +15,7 @@ export const Primary = styled.button<{
       : () => {
           switch (props.size) {
             case 'sm':
-              return '100px'
+              return '90px'
               break
             case 'md':
               return '150px'
@@ -30,7 +30,7 @@ export const Primary = styled.button<{
   height: ${(props) => {
     switch (props.size) {
       case 'sm':
-        return '30px'
+        return '22px'
         break
       case 'md':
         return '50px'
@@ -48,6 +48,9 @@ export const Primary = styled.button<{
   &:hover {
     opacity: 0.6;
   }
+  span {
+    font-size: ${(props) => (props.size === 'sm' ? '14px' : '16px')};
+  }
 `
 
 export const Secondary = styled(Primary)`
@@ -55,6 +58,5 @@ export const Secondary = styled(Primary)`
 `
 
 export const Text = styled.span`
-  font-size: 16px;
   color: ${C.white};
 `

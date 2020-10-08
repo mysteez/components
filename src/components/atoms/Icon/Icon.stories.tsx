@@ -20,3 +20,8 @@ export const X = Template.bind({})
 X.args = {
   name: 'x'
 }
+
+export const Search = Template.bind({})
+Search.args = {
+  name: 'search'
+}

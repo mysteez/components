@@ -2,7 +2,6 @@ import 'jest-styled-components'
 import React from 'react'
 
 import { Button } from './Button'
-import * as S from './styles'
 import { theme } from '../../../globalStyles/constants'
 import Adapter from 'enzyme-adapter-react-16'
 import { configure, mount, shallow } from 'enzyme'
@@ -38,18 +37,6 @@ describe('<Button />', () => {
     expect(SecondaryButton).toHaveStyleRule(
       'background-color',
       theme.button.colors.secondary.background
-    )
-  })
-
-  it('uses correct theme based on size prop', () => {
-    const text = 'test'
-    const NormalButtonText = mount(<Button label={text} size='md' />).find(
-      S.Text
-    )
-
-    expect(NormalButtonText).toHaveStyleRule(
-      'font-size',
-      theme.button.typography.fontSize
     )
   })
 })

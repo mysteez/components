@@ -46,7 +46,7 @@ export const theme = {
         background: lifeOrange
       },
       secondary: {
-        background: yeteeTurquoise
+        background: slateGray
       }
     },
     typography: {
